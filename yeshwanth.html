@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Question Page</title>
+    <style>
+        body {
+            /* background-color: #ff0000; */
+            background-image: url("D:/New folder (4)/hand_image.png");
+            height: 100%;
+            /* Crazy background color */
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            /* Crazy font */
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #000000;
+            /* Crazy text color */
+        }
+
+        .options {
+            margin-top: 10px;
+            color: #fcfafa;
+        }
+
+        .option {
+            display: block;
+            width: 80px;
+            margin-left: 45%;
+            margin-bottom: 5px;
+            background-color: #000000;
+            /* Crazy button color */
+            padding: 10px 20px;
+            border: 2px solid #0066cc;
+            /* Crazy border color */
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        /* Individual color pages styling */
+        .color-page {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .color-page h1 {
+            color: hsl(0, 10%, 84%);
+            /* White text color */
+        }
+
+        .color-page img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Styling for each color page */
+        .red {
+            background-color: #ff6666;
+        }
+
+        .blue {
+            background-color: #6666ff;
+        }
+
+        .green {
+            background-color: #66ff66;
+        }
+
+        .yellow {
+            background-color: #ff0000;
+        }
+
+        .bhu {
+            width: 40vw;
+            height: 90vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img class="bhu" src="D:/New folder (4)/question1.png" class="image" alt="Description of the image">
+
+        <div class="options">
+            <div class="option" onclick="handleOptionClick('page_red.html', this)">17,7</div>
+            <div class="option" onclick="handleOptionClick('page_blue.html', this)">15,6</div>
+            <div class="option" onclick="handleOptionClick('page_green.html', this)">16,4</div>
+            <div class="option" onclick="handleOptionClick('page_yellow.html', this)">17,6</div>
+        </div>
+    </div>
+
+    <script>
+        var optionSelected = false;
+
+        function handleOptionClick(page, element) {
+            if (!optionSelected) {
+                optionSelected = true;
+                disableOptions();
+                window.location.replace(page);
+            }
+        }
+
+        function disableOptions() {
+            var options = document.querySelectorAll('.option');
+            options.forEach(function (option) {
+                option.style.pointerEvents = 'none';
+            });
+        }
+    </script>
+
+
+
+</body>
+
+</html>
